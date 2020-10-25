@@ -1,8 +1,10 @@
-const { Router } = require('express');
 const express = require('express');
 const morgan = require('morgan');
-const app = express();
 
+const properties = require('./config/properties')
+const db = require('./config/database')
+db();
+const app = express();
 //const www = process.env.WWW || './';
 //app.use(express.static(www));
 
@@ -15,7 +17,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 //routes
-app.use(require('./routes/index'))
+app.use(require('./routes/routes'))
 
 //server
-app.listen(app.get('port'), () => console.log(`listening on http://localhost:${app.get('port')}`));
+app.listen(properties.PORT, () => {
+    console.log(`Server is running on ${properties.PORT}`)
+});
+//app.listen(app.get('port'), () => console.log(`listening on http://localhost:${app.get('port')}`));
