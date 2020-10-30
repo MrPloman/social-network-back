@@ -8,7 +8,7 @@ const error = chalk.bold.red;
 const termination = chalk.bold.magenta;
 
 module.exports = () => {
-    mongoose.connect(dbURL, { useNewUrlParser: true })
+    mongoose.connect(dbURL, { useNewUrlParser: true, useUnifiedTopology: true })
         .then(() => console.log(connected('MongoDB Connected on', dbURL)))
         .catch(err => console.log(error("Connection Failed")))
 

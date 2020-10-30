@@ -3,12 +3,15 @@ const userSchema = require('./user.model');
 
 
 userSchema.statics = {
-    create: (data, callback) => {
+    create: function(data, callback) {
         const user = new this(data);
         user.save(callback);
     },
-    get: (query, callback) => {
+    get: function(query, callback) {
         this.find(query, callback);
+    },
+    update: function(query, callback) {
+
     }
 }
 
