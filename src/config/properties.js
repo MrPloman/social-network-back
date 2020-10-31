@@ -1,6 +1,5 @@
-const { model } = require("mongoose");
-
 module.exports = {
     PORT: 3000,
-    DB: 'mongodb://localhost:27017/network'
+    DB: 'mongodb://localhost:27017/network',
+    SECRET: 'mySecretToken'
 }

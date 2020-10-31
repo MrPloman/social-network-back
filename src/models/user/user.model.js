@@ -38,6 +38,10 @@ const userSchema = new Schema({
     country: {
         type: String,
         required: false
+    },
+    level: {
+        type: Number,
+        required: true
     }
 }, {
     timestamps: true
